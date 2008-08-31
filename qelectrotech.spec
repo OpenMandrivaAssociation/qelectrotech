@@ -1,7 +1,7 @@
 %define name    qelectrotech
 %define version 0.11
-%define rel     r392
-%define release %mkrel 0.%{rel}.1
+#define rel     r392
+%define release %mkrel 1
 
 Summary: Tools to do electric scheme
 Name: %{name}
@@ -10,7 +10,7 @@ Release: %mkrel %{release}
 License: GPLv2+
 Group: Graphical desktop/KDE
 URL: http://qelectrotech.tuxfamily.org/index.html
-Source0: %{name}-%{rel}.tar.bz2
+Source0: %{name}-%{version}.tar.bz2
 Patch0: fix_qelectrotech_pro.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: qt4-devel
