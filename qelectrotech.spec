@@ -1,7 +1,7 @@
 %define name    qelectrotech
 %define version 0.11
 #define rel     r392
-%define release 2
+%define release 3
 
 Summary: Tools to do electric scheme
 Name: %{name}
@@ -14,6 +14,7 @@ Source0: %{name}-%{version}.tar.bz2
 Patch0: fix_qelectrotech_pro.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: qt4-devel
+BuildRequires: desktop-file-utils
 
 %description
 %{name} is a tool to do electrics scheme.
@@ -30,6 +31,16 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 make install
+
+desktop-file-install \
+  --remove-category="Office" \
+  --remove-category="Qt" \
+  --remove-category="VectorGraphics" \
+  --remove-category="Science" \
+  --remove-category="Electricity" \
+  --remove-category="Engineering" \
+  --add-category="X-MandrivaLinux-MoreApplications-Sciences-Electricity" \
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 # remove useless file
 rm -rf $RPM_BUILD_ROOT/usr/doc
