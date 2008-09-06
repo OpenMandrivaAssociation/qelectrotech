@@ -1,7 +1,7 @@
 %define name    qelectrotech
 %define version 0.11
-#define rel     r392
-%define release 3
+#define rel     r398
+%define release 4
 
 Summary: Tools to do electric scheme
 Name: %{name}
@@ -10,8 +10,10 @@ Release: %mkrel %{release}
 License: GPLv2+
 Group: Graphical desktop/KDE
 URL: http://qelectrotech.tuxfamily.org/index.html
-Source0: %{name}-%{version}.tar.bz2
+Source0: %{name}-%{version}-src.tar.gz
+Source1: man_fr_utf8.tar.bz2
 Patch0: fix_qelectrotech_pro.patch
+Patch1: fix_manpage.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: qt4-devel
 BuildRequires: desktop-file-utils
@@ -20,10 +22,12 @@ BuildRequires: desktop-file-utils
 %{name} is a tool to do electrics scheme.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
+tar xjf %{SOURCE1}
 perl -i -pe "s|/usr/local/|$RPM_BUILD_ROOT/usr/|g" qelectrotech.pro
 qmake
 make
@@ -59,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/application/x-qet-element.desktop
 %{_datadir}/mimelnk/application/x-qet-project.desktop
 %{_mandir}/fr.ISO8859-1/man1/%{name}.1.lzma
+%{_mandir}/fr.UTF-8/man1/%{name}.1.lzma
 %{_mandir}/man1/%{name}.1.lzma
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/qet.png
