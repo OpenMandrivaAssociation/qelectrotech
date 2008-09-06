@@ -1,7 +1,7 @@
 %define name    qelectrotech
 %define version 0.11
 #define rel     r398
-%define release 4
+%define release 5
 
 Summary: Tools to do electric scheme
 Name: %{name}
