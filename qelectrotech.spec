@@ -1,34 +1,37 @@
 %define name    qelectrotech
 %define version 0.11
 #define rel     r398
-%define release 5
+%define release 6
 
-Summary: Tools to do electric scheme
+Summary: A tool to design electric diagrams
 Name: %{name}
 Version: %{version}
 Release: %mkrel %{release}
 License: GPLv2+
-Group: Graphical desktop/KDE
+Group: Sciences/Other
 URL: http://qelectrotech.tuxfamily.org/index.html
 Source0: %{name}-%{version}-src.tar.gz
 Source1: man_fr_utf8.tar.bz2
 Patch0: fix_qelectrotech_pro.patch
 Patch1: fix_manpage.patch
+Patch2: add_to_change_to_pro.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: qt4-devel
 BuildRequires: desktop-file-utils
 
 %description
-%{name} is a tool to do electrics scheme.
+%{name} is a tool to design electric diagrams.
 
 %prep
 %setup -q -n %{name}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 tar xjf %{SOURCE1}
-perl -i -pe "s|/usr/local/|$RPM_BUILD_ROOT/usr/|g" qelectrotech.pro
+perl -i -pe "s|COMPIL_PREFIX_TO_CHANGE|/usr/|g" qelectrotech.pro
+perl -i -pe "s|INSTALL_PREFIX_TO_CHANGE|$RPM_BUILD_ROOT/usr/|g" qelectrotech.pro
 qmake
 make
 
