@@ -1,7 +1,7 @@
 %define name    qelectrotech
 %define version 0.11
 #define rel     r398
-%define release 6
+%define release 7
 
 Summary: A tool to design electric diagrams
 Name: %{name}
@@ -15,6 +15,7 @@ Source1: man_fr_utf8.tar.bz2
 Patch0: fix_qelectrotech_pro.patch
 Patch1: fix_manpage.patch
 Patch2: add_to_change_to_pro.patch
+Patch3: fix_contextual_menu.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: qt4-devel
 BuildRequires: desktop-file-utils
@@ -27,6 +28,7 @@ BuildRequires: desktop-file-utils
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p0
 
 %build
 tar xjf %{SOURCE1}
@@ -70,5 +72,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/%{name}.1.lzma
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/qet.png
-
-
