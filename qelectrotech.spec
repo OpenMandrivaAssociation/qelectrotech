@@ -1,7 +1,7 @@
 %define name    qelectrotech
 %define version 0.11
 #define rel     r398
-%define release 7
+%define release 8
 
 Summary: A tool to design electric diagrams
 Name: %{name}
@@ -12,6 +12,7 @@ Group: Sciences/Other
 URL: http://qelectrotech.tuxfamily.org/index.html
 Source0: %{name}-%{version}-src.tar.gz
 Source1: man_fr_utf8.tar.bz2
+Source2: qelectrotech.xml
 Patch0: fix_qelectrotech_pro.patch
 Patch1: fix_manpage.patch
 Patch2: add_to_change_to_pro.patch
@@ -51,24 +52,28 @@ desktop-file-install \
   --add-category="X-MandrivaLinux-MoreApplications-Sciences-Electricity" \
   --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
+# add the association file
+mkdir -p $RPM_BUILD_ROOT/%{_datadir}/mime/packages/
+install %{SOURCE2} $RPM_BUILD_ROOT/%{_datadir}/mime/packages/%{name}.xml
+
 # remove useless file
 rm -rf $RPM_BUILD_ROOT/usr/doc
+rm -rf $RPM_BUILD_ROOT%{_datadir}/mime/application/x-qet-element.xml
+rm -rf $RPM_BUILD_ROOT%{_datadir}/mime/application/x-qet-project.xml
+rm -rf $RPM_BUILD_ROOT%{_datadir}/mimelnk/application/x-qet-element.desktop
+rm -rf $RPM_BUILD_ROOT%{_datadir}/mimelnk/application/x-qet-project.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(-,root,root,-)
 %doc CREDIT LICENSE README
 %{_bindir}/%{name}
 %{_datadir}/%{name}
-%{_datadir}/mime/application/x-qet-element.xml
-%{_datadir}/mime/application/x-qet-project.xml
-%{_datadir}/mimelnk/application/x-qet-element.desktop
-%{_datadir}/mimelnk/application/x-qet-project.desktop
 %{_mandir}/fr.ISO8859-1/man1/%{name}.1.lzma
 %{_mandir}/fr.UTF-8/man1/%{name}.1.lzma
 %{_mandir}/man1/%{name}.1.lzma
 %{_datadir}/applications/%{name}.desktop
+%{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/icons/qet.png
