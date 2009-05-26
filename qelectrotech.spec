@@ -5,6 +5,7 @@
 
 Summary: A tool to design electric diagrams
 Name: %{name}
+Epoch: 1
 Version: %{version}
 Release: %mkrel %{release}
 License: GPLv2+
@@ -71,17 +72,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/%{name}.1.lzma
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/mime/packages/%{name}.xml
-%{_iconsbasedir}/128x128/apps/%{name}.png
-%{_iconsbasedir}/128x128/mimetypes/*.png
-%{_iconsbasedir}/16x16/apps/%{name}.png
-%{_iconsbasedir}/16x16/mimetypes/*.png
-%{_iconsbasedir}/22x22/apps/%{name}.png
-%{_iconsbasedir}/22x22/mimetypes/*.png
-%{_iconsbasedir}/256x256/apps/%{name}.png
-%{_iconsbasedir}/256x256/mimetypes/*.png
-%{_iconsbasedir}/32x32/apps/%{name}.png
-%{_iconsbasedir}/32x32/mimetypes/*.png
-%{_iconsbasedir}/48x48/apps/%{name}.png
-%{_iconsbasedir}/48x48/mimetypes/*.png
-%{_iconsbasedir}/64x64/apps/%{name}.png
-%{_iconsbasedir}/64x64/mimetypes/*.png
+%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
+%{_datadir}/icons/hicolor/128x128/mimetypes/*.png
+%{_datadir}/icons/hicolor/16x16/apps/%{name}.png
+%{_datadir}/icons/hicolor/16x16/mimetypes/*.png
+%{_datadir}/icons/hicolor/22x22/apps/%{name}.png
+%{_datadir}/icons/hicolor/22x22/mimetypes/*.png
+%{_datadir}/icons/hicolor/256x256/apps/%{name}.png
+%{_datadir}/icons/hicolor/256x256/mimetypes/*.png
+%{_datadir}/icons/hicolor/32x32/apps/%{name}.png
+%{_datadir}/icons/hicolor/32x32/mimetypes/*.png
+%{_datadir}/icons/hicolor/48x48/apps/%{name}.png
+%{_datadir}/icons/hicolor/48x48/mimetypes/*.png
+%{_datadir}/icons/hicolor/64x64/apps/%{name}.png
+%{_datadir}/icons/hicolor/64x64/mimetypes/*.png
