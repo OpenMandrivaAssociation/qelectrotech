@@ -1,11 +1,11 @@
 %define name    qelectrotech
-%define version 0.2rc2
+%define version 0.2
 #define rel     r398
 %define release 1
 
 Summary: A tool to design electric diagrams
 Name: %{name}
-Epoch: 1
+Epoch: 2
 Version: %{version}
 Release: %mkrel %{release}
 License: GPLv2+
