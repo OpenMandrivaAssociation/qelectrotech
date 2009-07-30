@@ -1,7 +1,7 @@
 %define name    qelectrotech
 %define version 0.2
 #define rel     r398
-%define release 1
+%define release 2
 
 Summary: A tool to design electric diagrams
 Name: %{name}
@@ -15,6 +15,8 @@ Source0: %{name}-%{version}-src.tar.gz
 Source1: qelectrotech.xml
 Patch0: fix_qelectrotech_pro.patch
 Patch1: add_to_change_to_pro.patch
+Patch2: r723-xavier.diff
+Patch3: r724-xavier.diff
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: qt4-devel
 BuildRequires: desktop-file-utils
@@ -26,6 +28,8 @@ BuildRequires: desktop-file-utils
 %setup -q -n %{name}-%{version}-src
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
 perl -i -pe "s|COMPIL_PREFIX_TO_CHANGE|/usr/|g" qelectrotech.pro
