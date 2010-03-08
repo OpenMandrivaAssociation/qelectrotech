@@ -1,7 +1,7 @@
 %define name    qelectrotech
-%define version 0.2
+%define version 0.21
 #define rel     r398
-%define release 2
+%define release 1
 
 Summary: A tool to design electric diagrams
 Name: %{name}
@@ -15,8 +15,6 @@ Source0: %{name}-%{version}-src.tar.gz
 Source1: qelectrotech.xml
 Patch0: fix_qelectrotech_pro.patch
 Patch1: add_to_change_to_pro.patch
-Patch2: r723-xavier.diff
-Patch3: r724-xavier.diff
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: qt4-devel
 BuildRequires: desktop-file-utils
@@ -28,8 +26,6 @@ BuildRequires: desktop-file-utils
 %setup -q -n %{name}-%{version}-src
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
 
 %build
 perl -i -pe "s|COMPIL_PREFIX_TO_CHANGE|/usr/|g" qelectrotech.pro
@@ -70,10 +66,12 @@ rm -rf $RPM_BUILD_ROOT
 %doc CREDIT ELEMENTS.LICENSE INSTALL LICENSE README
 %{_bindir}/%{name}
 %{_datadir}/%{name}
+%{_mandir}/es/man1/%{name}.1.lzma
 %{_mandir}/fr.ISO8859-1/man1/%{name}.1.lzma
 %{_mandir}/fr.UTF-8/man1/%{name}.1.lzma
 %{_mandir}/fr/man1/%{name}.1.lzma
 %{_mandir}/man1/%{name}.1.lzma
+%{_mandir}/pt/man1/%{name}.1.lzma
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/icons/hicolor/128x128/apps/%{name}.png
