@@ -1,5 +1,5 @@
 %define name    qelectrotech
-%define version 0.21
+%define version 0.22
 #define rel     r398
 %define release 1
 
