@@ -1,0 +1,21 @@
+Index: qelectrotech-0.2b-src/qelectrotech.pro
+===================================================================
+--- qelectrotech-0.2b-src/qelectrotech.pro
++++ qelectrotech-0.2b-src/qelectrotech.pro	2009-05-24 23:22:12.000000000 +0200
+@@ -12,12 +12,12 @@
+ 	QET_LANG_PATH              = 'share/qelectrotech/lang/'
+ 	QET_EXAMPLES_PATH          = 'share/qelectrotech/examples/'
+ 	QET_LICENSE_PATH           = 'doc/qelectrotech/'
+-	QET_MIME_XML_PATH          = '../share/mime/application/'
+-	QET_MIME_DESKTOP_PATH      = '../share/mimelnk/application/'
+-	QET_MIME_PACKAGE_PATH      = '../share/mime/packages/'
++	QET_MIME_XML_PATH          = 'share/mime/application/'
++	QET_MIME_DESKTOP_PATH      = 'share/mimelnk/application/'
++	QET_MIME_PACKAGE_PATH      = 'share/mime/packages/'
+ 	QET_DESKTOP_PATH           = 'share/applications/'
+ 	QET_ICONS_PATH             = 'share/icons/hicolor/'
+-	QET_MAN_PATH               = 'man/'
++	QET_MAN_PATH               = 'share/man/'
+ }
+ win32 {
+ 	# Chemins Windows

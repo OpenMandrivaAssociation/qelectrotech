@@ -1,0 +1,15 @@
+Index: qelectrotech-0.2b-src/qelectrotech.pro
+===================================================================
+--- qelectrotech-0.2b-src/qelectrotech.pro
++++ qelectrotech-0.2b-src/qelectrotech.pro	2009-05-24 23:25:58.000000000 +0200
+@@ -5,8 +5,8 @@
+ # Chemins utilises pour la compilation et l'installation de QET
+ unix {
+ 	# Chemins UNIX
+-	COMPIL_PREFIX              = '/usr/local/'
+-	INSTALL_PREFIX             = '/usr/local/'
++	COMPIL_PREFIX              = 'COMPIL_PREFIX_TO_CHANGE'
++	INSTALL_PREFIX             = 'INSTALL_PREFIX_TO_CHANGE'
+ 	QET_BINARY_PATH            = 'bin/'
+ 	QET_COMMON_COLLECTION_PATH = 'share/qelectrotech/elements/'
+ 	QET_LANG_PATH              = 'share/qelectrotech/lang/'
