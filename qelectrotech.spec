@@ -2,7 +2,7 @@ Summary:	A tool to design electric diagrams
 Name:		qelectrotech
 Epoch:		2
 Version:	0.22
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Sciences/Other
 URL:		http://qelectrotech.tuxfamily.org/index.html
