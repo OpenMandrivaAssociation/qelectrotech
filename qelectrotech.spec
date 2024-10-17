@@ -5,7 +5,7 @@ Version:	0.22
 Release:	4
 License:	GPLv2+
 Group:		Sciences/Other
-URL:		http://qelectrotech.tuxfamily.org/index.html
+URL:		https://qelectrotech.tuxfamily.org/index.html
 Source0:	%{name}-%{version}-src.tar.gz
 Source1:	qelectrotech.xml
 Patch0:		fix_qelectrotech_pro.patch
