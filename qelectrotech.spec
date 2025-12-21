@@ -10,6 +10,7 @@ Source0:	%{name}-%{version}-src.tar.gz
 Source1:	qelectrotech.xml
 Patch0:		fix_qelectrotech_pro.patch
 Patch1:		add_to_change_to_pro.patch
+BuildRequires:	make
 BuildRequires:	qt4-devel
 BuildRequires:	desktop-file-utils
 
