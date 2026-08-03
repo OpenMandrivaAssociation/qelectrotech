@@ -1,12 +1,12 @@
 Summary:	A tool to design electric diagrams
 Name:		qelectrotech
 Epoch:		2
-Version:	0.22
-Release:	4
+Version:	0.100
+Release:	1
 License:	GPLv2+
 Group:		Sciences/Other
 URL:		https://qelectrotech.tuxfamily.org/index.html
-Source0:	%{name}-%{version}-src.tar.gz
+Source0:	%{name}-%{version}.tar.gz
 Source1:	qelectrotech.xml
 Patch0:		fix_qelectrotech_pro.patch
 Patch1:		add_to_change_to_pro.patch
@@ -18,9 +18,9 @@ BuildRequires:	desktop-file-utils
 %{name} is a tool to design electric diagrams.
 
 %prep
-%setup -q -n %{name}-%{version}-src
-%patch0 -p1
-%patch1 -p1
+%setup -q -n %{name}-%{version}
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 perl -i -pe "s|COMPIL_PREFIX_TO_CHANGE|/usr/|g" qelectrotech.pro
